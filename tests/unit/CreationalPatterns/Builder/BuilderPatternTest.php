@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use DesignPatterns\CreationalPatterns\Builder\Address;
 use DesignPatterns\CreationalPatterns\Builder\Customer;
 use DesignPatterns\CreationalPatterns\Builder\CustomerBuilder;

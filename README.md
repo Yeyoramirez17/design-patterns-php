@@ -11,3 +11,7 @@ A continuación se muestra una lista de los patrones de diseño que se han imple
 
 * [Factory Method](./src/CreationalPatterns/FactoryMethod/factory-method.md)
 * [Builder](./src/CreationalPatterns/Builder/builder-pattern.md)
+
+### Patrones Estructurales
+
+* [Adapter](./src/StructuralPatterns/Decorator/decorator.md)

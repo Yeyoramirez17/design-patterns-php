@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DesignPatterns\CreationalPatterns\Builder;
 
@@ -30,7 +30,7 @@ final class Customer
         ?Address $address   = null,
         ?array $orders      = null
     ) {
-        $this->id           = md5(uniqid(mt_rand(), true));
+        $this->id           = md5(uniqid((string) mt_rand(), true));
         $this->firstName    = $firstName;
         $this->lastName     = $lastName;
         $this->email        = $email;

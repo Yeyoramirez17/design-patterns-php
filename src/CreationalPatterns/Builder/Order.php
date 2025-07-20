@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DesignPatterns\CreationalPatterns\Builder; 
 
@@ -13,7 +13,7 @@ class Order
 
     public function __construct(int $amount, float $discount, float $total) 
     {
-        $this->id        = md5(uniqid(mt_rand(), true));
+        $this->id        = md5(uniqid((string) mt_rand(), true));
         $this->amount    = $amount;
         $this->discount  = $discount;
         $this->total     = $total;
