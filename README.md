@@ -15,3 +15,6 @@ A continuación se muestra una lista de los patrones de diseño que se han imple
 ### Patrones Estructurales
 
 * [Adapter](./src/StructuralPatterns/Decorator/decorator.md)
+
+### Patrones de Comportamiento
+* [Strategy](./src/BehaviolarPatterns/Strategy/strategy.md)
