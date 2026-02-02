@@ -18,3 +18,6 @@ A continuación se muestra una lista de los patrones de diseño que se han imple
 
 ### Patrones de Comportamiento
 * [Strategy](./src/BehaviolarPatterns/Strategy/strategy.md)
+* [Memento](./src/BehaviolarPatterns/Memento/memento.md)
+* [Iterator](./src/BehaviolarPatterns/Iterator/iterator.md)
+* [Observer](./src/BehaviolarPatterns/Observer/observer.md)

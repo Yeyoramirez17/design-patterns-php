@@ -1,17 +1,17 @@
 <?php
 
-
 namespace DesignPatterns\BehaviolarPatterns\Observer;
 
+use SplObjectStorage;
 use SplObserver;
 use SplSubject;
 
 class Blog implements SplSubject
 {
     /**
-     * @var array<string, Subscriber> List of subscribers.
+     * @var SplObjectStorage List of subscribers.
      */
-    private array $observers;
+    private SplObjectStorage $observers;
 
     private string $title;
     private string $content;
@@ -20,25 +20,25 @@ class Blog implements SplSubject
 
     public function __construct()
     {
-        $this->observers = [];
+        $this->observers = new SplObjectStorage();
     }
 
     public function attach(SplObserver $observer): void
     {
-        $this->observers[spl_object_hash($observer)] = $observer;
+        $this->observers->offsetSet($observer);
     }
 
     public function detach(SplObserver $observer): void
     {
-        unset($this->observers[spl_object_hash($observer)]);
+        $this->observers->offsetUnset($observer);
     }
 
     public function getObserver(SplObserver $observer): ?SplObserver
     {
-        return $this->observers[spl_object_hash($observer)] ?? null;
+        return $this->observers->offsetGet($observer) ?? null;
     }
 
-    public function observers(): array
+    public function observers(): SplObjectStorage
     {
         return $this->observers;
     }
@@ -54,7 +54,7 @@ class Blog implements SplSubject
     {
         $count = 0;
         foreach ($this->observers as $observer) {
-            if ($observer instanceof Subscriber && $observer->isReceivedNewsletter()) {
+            if ($observer->isReceivedNewsletter()) {
                 $count++;
             }
         }
